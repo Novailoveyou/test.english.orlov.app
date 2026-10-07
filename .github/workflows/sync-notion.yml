@@ -16,7 +16,7 @@ permissions:
 jobs:
   sync:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 240
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -58,8 +58,8 @@ jobs:
             --url "$NOTION_URL" \
             --out . \
             --keep-cname \
-            --delay-ms 400 \
-            --retries 3 \
+            --delay-ms 500 \
+            --retries 6 \
             --concurrency 16
 
       - name: Commit & push
